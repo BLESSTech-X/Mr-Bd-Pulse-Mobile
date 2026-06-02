@@ -1,3 +1,180 @@
+/* ===== HEADER WITH LOGO & MENU ===== */
+.site-header {
+    background: #000;
+    border-bottom: 2px solid gold;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    font-size: 28px;
+    color: gold;
+}
+
+.logo span {
+    font-size: 22px;
+    font-weight: bold;
+    color: gold;
+    letter-spacing: 1px;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.desktop-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.desktop-nav a:hover {
+    color: gold;
+}
+
+.nav-wa-btn {
+    background: #25D366;
+    padding: 8px 18px;
+    border-radius: 30px;
+    color: white !important;
+}
+
+.nav-wa-btn:hover {
+    background: #128C7E;
+    color: white !important;
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: gold;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Mobile Sidebar Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100%;
+    background: #0a0a0a;
+    border-right: 2px solid gold;
+    z-index: 1002;
+    transition: left 0.3s ease;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.mobile-menu.open {
+    left: 0;
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    color: gold;
+    font-size: 24px;
+    cursor: pointer;
+    float: right;
+}
+
+.mobile-logo {
+    text-align: center;
+    padding: 40px 0 30px;
+}
+
+.mobile-logo i {
+    font-size: 48px;
+    color: gold;
+}
+
+.mobile-logo span {
+    display: block;
+    margin-top: 10px;
+    color: gold;
+    font-weight: bold;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.mobile-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 10px;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mobile-nav a i {
+    width: 25px;
+    color: gold;
+}
+
+.mobile-nav a:hover {
+    background: #1a1a1a;
+}
+
+/* Menu Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1001;
+    display: none;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+/* Responsive: Hide desktop nav, show hamburger on mobile */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+/* ===== REST OF YOUR EXISTING CSS CONTINUES BELOW ===== */
+/* (Keep all your existing CSS from style.css here) */
 * {
     margin: 0;
     padding: 0;
