@@ -248,6 +248,7 @@ async function loadCMSContent() {
 
 // ===== INITIALIZE =====
 document.addEventListener('DOMContentLoaded', () => {
+    setupMobileMenu();        // NEW: hamburger menu
     startSlideshow();
     setupScrollTop();
     setupProductsPage();
