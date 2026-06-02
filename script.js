@@ -1,3 +1,64 @@
+// ===== HAMBURGER MENU =====
+function setupMobileMenu() {
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    if (!hamburgerBtn || !mobileMenu || !closeMenuBtn || !menuOverlay) return;
+
+    function openMenu() {
+        mobileMenu.classList.add('open');
+        menuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        mobileMenu.classList.remove('open');
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    hamburgerBtn.addEventListener('click', openMenu);
+    closeMenuBtn.addEventListener('click', closeMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+
+    // Close menu when a link is clicked
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+}
+
+// ===== ACTIVE NAVIGATION (updated for both header and bottom nav) =====
+function setActiveNav() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Header desktop nav
+    const desktopLinks = document.querySelectorAll('.desktop-nav a');
+    desktopLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === 'index.html' && href === 'index.html')) {
+            link.style.color = 'gold';
+        }
+    });
+    
+    // Bottom navigation
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => {
+        const href = item.getAttribute('href');
+        if (href === currentPage || (currentPage === 'index.html' && href === 'index.html')) {
+            item.classList.add('active');
+        } else if (currentPage === '' && href === 'index.html') {
+            item.classList.add('active');
+        }
+    });
+}
+
+// ===== REST OF YOUR EXISTING FUNCTIONS CONTINUE =====
+// (Keep all your existing JavaScript from script.js here)
+
+// Make sure to call setupMobileMenu() in DOMContentLoaded
 // ===== SLIDESHOW =====
 let slideIndex = 0;
 let slideInterval;
