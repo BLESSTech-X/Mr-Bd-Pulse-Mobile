@@ -9,6 +9,59 @@
 </head>
 <body>
 
+    <!-- Header with Logo and Hamburger Menu -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <div class="logo">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>MR BD Pulse Mobile</span>
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact</a>
+                <a href="https://wa.me/260572523334" class="nav-wa-btn" target="_blank">WhatsApp</a>
+            </nav>
+            
+            <!-- Hamburger Menu Button (Mobile Only) -->
+            <button class="hamburger" id="hamburgerBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Sidebar Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="close-menu" id="closeMenuBtn">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="mobile-logo">
+                <i class="fas fa-mobile-alt"></i>
+                <span>MR BD Pulse Mobile</span>
+            </div>
+            <nav class="mobile-nav">
+                <a href="index.html">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="products.html">
+                    <i class="fas fa-th"></i> Products
+                </a>
+                <a href="contact.html">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+                <a href="https://wa.me/260572523334" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </nav>
+        </div>
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+
+    <!-- Rest of the body continues here -->
+
     <!-- Main Content -->
     <main class="main-content">
         <!-- Hero Slideshow Section -->
